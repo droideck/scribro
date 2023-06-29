@@ -6,7 +6,7 @@ pub struct AdminConsole {
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
-    pub loggedIn: bool,
+    pub logged_in: bool,
 }
 
 pub enum Msg {}
@@ -15,14 +15,14 @@ impl Component for AdminConsole {
     type Message = Msg;
     type Properties = Props;
 
-    fn create(ctx: &Context<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         let props = Props {
-            loggedIn: false,
+            logged_in: false,
         };
         Self { props }
     }
 
-    fn view(&self, ctx: &Context<Self>) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <div>
                 <h2>{"Welcome to the Admin Console"}</h2>

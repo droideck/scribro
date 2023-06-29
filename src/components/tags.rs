@@ -13,7 +13,7 @@ impl Component for Tags {
     type Message = ();
     type Properties = Props;
 
-    fn create(ctx: &Context<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         let props = Props {
             tags: vec!["Test".to_string()],
         };
@@ -21,7 +21,7 @@ impl Component for Tags {
     }
 
 
-    fn view(&self, ctx: &Context<Self>) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <div>
                 <p>{"Tags:"}</p>

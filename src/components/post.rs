@@ -16,7 +16,7 @@ impl Component for Post {
     type Message = ();
     type Properties = Props;
 
-    fn create(ctx: &Context<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         let props = Props {
             title: "Test".to_string(),
             body: "Test".to_string(),
@@ -26,7 +26,7 @@ impl Component for Post {
         Self { props }
     }
 
-    fn view(&self, ctx: &Context<Self>) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <div>
                 <h2>{"Welcome to the Blog"}</h2>
