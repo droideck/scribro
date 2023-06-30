@@ -1,8 +1,6 @@
 use yew::prelude::*;
 
-pub struct Tags {
-    props: Props,
-}
+pub struct Tags;
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
@@ -14,10 +12,7 @@ impl Component for Tags {
     type Properties = Props;
 
     fn create(_ctx: &Context<Self>) -> Self {
-        let props = Props {
-            tags: vec!["Test".to_string()],
-        };
-        Self { props }
+        Self
     }
 
 

@@ -1,8 +1,6 @@
 use yew::prelude::*;
 
-pub struct Comment {
-    props: Props,
-}
+pub struct Comment;
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
@@ -14,10 +12,7 @@ impl Component for Comment {
     type Properties = Props;
 
     fn create(_ctx: &Context<Self>) -> Self {
-        let props = Props {
-            comment: "Test".to_string(),
-        };
-        Self { props }
+        Self
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {

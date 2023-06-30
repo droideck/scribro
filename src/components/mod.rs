@@ -1,8 +1,8 @@
-mod post;
-mod comments;
-mod comment;
-mod tags;
-mod admin_console;
+pub mod post;
+pub mod comments;
+pub mod comment;
+pub mod tags;
+pub mod admin_console;
 
 pub use post::Post;
 pub use comments::Comments;

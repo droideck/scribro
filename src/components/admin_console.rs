@@ -1,8 +1,6 @@
 use yew::prelude::*;
 
-pub struct AdminConsole {
-    props: Props,
-}
+pub struct AdminConsole;
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
@@ -16,10 +14,7 @@ impl Component for AdminConsole {
     type Properties = Props;
 
     fn create(_ctx: &Context<Self>) -> Self {
-        let props = Props {
-            logged_in: false,
-        };
-        Self { props }
+        Self
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
