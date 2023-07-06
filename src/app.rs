@@ -8,7 +8,12 @@ fn HelloWorld() -> Html {
 
 #[function_component]
 pub fn PostText() -> Html {
-    html! {<Post title={"First Post"} body={"foobar"} author={"Simon"} date={"2023-06-30"}/>}
+    let connection = crate::db::establish_connection();
+    let posts = crate::db::load_posts(&connection);
+
+    html! {
+        { for posts.into_iter().map(|post| html! {<Post title={post.title} body={post.body} author={post.author} date={post.date.to_string()}/>}) }
+    }
 }
 
 #[function_component]

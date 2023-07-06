@@ -1,4 +1,5 @@
 mod app;
+mod db;
 
 use app::App;
 
