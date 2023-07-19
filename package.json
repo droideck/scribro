@@ -4,13 +4,16 @@
   "description": "Simon's Blog",
   "main": "index.js",
   "scripts": {
-    "build":"npx tailwindcss -i ./input.css -o ./style/output.css",
-    "watch":"npx tailwindcss -i ./input.css -o ./style/output.css --watch"
+    "build": "npx tailwindcss -i ./input.css -o ./style/output.css",
+    "watch": "npx tailwindcss -i ./input.css -o ./style/output.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9"
   }
 }

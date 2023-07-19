@@ -1,5 +1,7 @@
 use crate::error_template::{AppError, ErrorTemplate};
 use crate::pages::Home::*;
+use crate::pages::Posts::*;
+use crate::pages::AboutMe::*;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
@@ -27,10 +29,10 @@ pub fn App(cx: Scope) -> impl IntoView {
             .into_view(cx)
         }>
             <Routes>
-                <Route path="" view=  move |cx| view! { cx, <Home/> }/>
-                // <Route path="/posts" view=  move |cx| view! { cx, <Posts/> }/>
+                <Route ssr=SsrMode::Async path="" view=  move |cx| view! { cx, <Home/> }/>
+                <Route ssr=SsrMode::Async path="/posts" view=  move |cx| view! { cx, <Posts/> }/>
+                <Route ssr=SsrMode::Async path="/about-me" view=  move |cx| view! { cx, <AboutMe/> }/>
                 // <Route path="/posts/:id" view=  move |cx| view! { cx, <Post/> }/>
-                // <Route path="/about-me" view=  move |cx| view! { cx, <AboutMe/> }/>
             </Routes>
         </Router>
     }
