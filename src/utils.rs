@@ -72,6 +72,6 @@ pub fn fetch_all_tags() -> Vec<String> {
 pub fn fetch_tag_posts(tag: String) -> HashMap<String, BlogPost> {
     fetch_all_posts()
         .into_iter()
-        .filter(|(id, post)| post.metadata.tags.contains(&tag))
+        .filter(|(_id, post)| post.metadata.tags.contains(&tag))
         .collect()
 }

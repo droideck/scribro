@@ -4,11 +4,11 @@ use crate::components::Header::*;
 use crate::components::Page::*;
 
 #[component]
-pub fn AboutMe(cx: Scope) -> impl IntoView {
+pub fn AboutMe() -> impl IntoView {
     let description = String::from("Hello and welcome to my blog.
     I plan to share my expirience and thoughts on different subjects and hobby projects.");
 
-    view! { cx,
+    view! {
         <Title text="Home"/>
         <Page>
             <Header/>

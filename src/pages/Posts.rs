@@ -6,11 +6,11 @@ use crate::components::PostContent::*;
 use crate::utils::fetch_post;
 
 #[component]
-pub fn Posts(cx: Scope) -> impl IntoView {
-    let (preview, set_preview) = create_signal(cx, false);
+pub fn Posts() -> impl IntoView {
+    let (preview, set_preview) = create_signal(false);
     let post = fetch_post("hello-world".to_string());
 
-    view! { cx,
+    view! {
         <Title text="Home"/>
         <Page>
             <Header/>
@@ -24,9 +24,9 @@ pub fn Posts(cx: Scope) -> impl IntoView {
                 <div class="container px-5 py-24 mx-auto flex flex-col items-center justify-center">
                     <div class="flex flex-col text-center w-full mb-20">
                         {move || if preview() {
-                            view! { cx, <PostContent text=post.clone().text /> }.into_view(cx)
+                            view! { <PostContent text=post.clone().text /> }.into_view()
                         } else {
-                            view! { cx, <div>{post.clone().metadata.preview}</div> }.into_view(cx)
+                            view! { <div>{post.clone().metadata.preview}</div> }.into_view()
                         }}
                     </div>
                 </div>
