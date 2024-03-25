@@ -1,11 +1,11 @@
 use leptos::*;
 use crate::utils::{fetch_post, BlogPost};
-use leptos_router::use_params;
+use leptos_router::*;
 
 #[component]
 pub fn Post() -> impl IntoView {
-    let params = use_params();
-    let post_id = params.get("id").unwrap_or_default();
+    let params = use_params_map();
+    let post_id = params().get("id").cloned().unwrap_or_default();
     let post: BlogPost = fetch_post(post_id);
 
     view! {
@@ -20,3 +20,4 @@ pub fn Post() -> impl IntoView {
         </article>
     }
 }
+

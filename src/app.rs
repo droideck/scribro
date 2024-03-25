@@ -1,5 +1,6 @@
 use crate::error_template::{AppError, ErrorTemplate};
 use crate::pages::Home::*;
+use crate::pages::Post::*;
 use crate::pages::Posts::*;
 use crate::pages::AboutMe::*;
 use leptos::*;
@@ -13,7 +14,6 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-        <Html lang="en"/>
         <Stylesheet id="leptos" href="/pkg/scribro.css"/>
         <Title formatter/>
         <Meta
@@ -32,7 +32,7 @@ pub fn App() -> impl IntoView {
                 <Route ssr=SsrMode::Async path="" view=Home/>
                 <Route ssr=SsrMode::Async path="/posts" view=Posts/>
                 <Route ssr=SsrMode::Async path="/about-me" view=AboutMe/>
-                <Route path="/posts/:id" view=Post/>
+                <Route ssr=SsrMode::Async path="/posts/:id" view=Post/>
             </Routes>
         </Router>
     }
